@@ -1,0 +1,23 @@
+What is better: Solidity struct vs Child Contract?
+
+Most of the time, its better to save on gas costs and use structs. This can also include very complex data structures as you will see later.
+
+Good reasons to use Structs over Child Contract:
+
+Saving Gas Costs! Deploying Child Contracts is simply more expensive.
+
+Saving Compexity: Every time you need to access a child contracts property or variable, it needs to go through the child contracts address. For structs, internally, that's just an keccak hash for a lookup at the storage location.
+
+DRY/KISS principle (Don't repeat yourself, keep is simple, stupid): Contracts are code. Every time you deploy the same contract with the same code you basically repeated yourself. And its not really simple either.
+
+Attack Vector: Contracts are running on its own address. If you have a set of getter and setter functions, there is a chance you need to have access lists or permissions that need to be managed separately.
+
+Having said all this, there are also good reasons for using Child Contracts over Structs:
+
+Contract can have any code you want and that means the power of composability. You can put the contracts together like lego pieces and each contrac can have its own logic built in.
+
+Smaller Contracts if the code is split across several contracts. In the particular example above, you don't need to get payments from the wallet contract, you can get the payments from the child contract.
+
+Access: Contracts have their own address, can have their own data structures and their own interfaces.
+In general, as a rule of thumb, normally you'd use structs, unless you need special logic, then you take contracts.
+

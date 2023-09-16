@@ -1,0 +1,145 @@
+﻿GO to this link - https://sepoliafaucet.com/
+
+
+  
+
+
+
+Click the signup link
+  
+
+
+
+
+
+
+
+
+
+Create Temp Mail:
+
+
+https://www.emailnator.com/
+Go this link to create a temp mail
+  
+
+
+
+Click on “GO”
+
+
+  
+
+
+
+Now copy the email address
+—---------------------------------------------------------------------------------------------
+Let’s get back to the alchemy page and create a account using the email address from temp mail
+  
+
+
+
+Sign Up
+And 
+Go to temp mail address and verify the email
+—---------------------------------------------------------------
+
+
+Choose free account and next
+  
+
+Skip the billing page
+
+
+
+
+Free Ether:
+
+
+Put the metamask address in here to get free ether
+  
+
+
+
+  
+
+  
+
+
+
+Click on send me eth
+—---------------------------------------------------------
+
+
+  
+
+
+
+The transaction has been made successfully
+
+
+Verify The transaction:
+
+
+https://sepolia.etherscan.io/
+
+
+Go to the address and paste your account address
+  
+
+
+
+A transaction has been made successfully
+
+
+Create another account:
+
+
+  
+
+Create an account from here
+
+
+  
+
+Give an account name
+And click on create account
+
+
+
+
+
+
+
+
+Send eth to another account:
+
+
+Copy the second account address,
+
+
+Go to account 1 and click on send…
+  
+
+
+
+Paste the address and “Put and ammount” click next,
+  
+
+
+
+
+
+Confirm the transaction,
+  
+
+
+
+  
+
+
+
+Congrats, the transaction has been successful…
+
+
+Go to etherscan and check the transaction details….

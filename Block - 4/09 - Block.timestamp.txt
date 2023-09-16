@@ -1,0 +1,15 @@
+In Solidity, block.timestamp is a global variable that represents the timestamp of the current block. It provides the time at which the current block was mined by the Ethereum network.
+
+The block.timestamp value is a Unix timestamp, which represents the number of seconds that have elapsed since January 1, 1970 (also known as the Unix epoch). It is a 32-bit unsigned integer that increases with each new block.
+
+When you use block.timestamp in your Solidity code, you can access the timestamp value of the current block. This can be useful for various purposes, such as time-based calculations, time-based conditions, or timestamp comparisons.
+
+For example, you can use block.timestamp to record the timestamp of a specific event, track time intervals, or implement time-based restrictions in your smart contracts.
+
+It's important to note that block.timestamp is set by the miner who mines the block, and there can be a small variation in the timestamp due to the decentralized nature of the Ethereum network. Additionally, miners have some flexibility in setting the timestamp, as long as it is within a certain range to prevent manipulation of the block timestamp for malicious purposes.
+
+Overall, block.timestamp provides access to the timestamp of the current block, allowing you to incorporate time-related functionality into your Solidity contracts.
+—---------------------------------------------------------------------------------------------------------------------------
+Epoch converter website:
+https://www.epochconverter.com/
+

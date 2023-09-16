@@ -1,0 +1,24 @@
+﻿Contract
+We're going to expand our Smart Contract from before and add a function to write!
+
+//SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.20;
+
+contract MyContract {
+    string public myString = "Hello world";
+
+    function updateOurString(string memory _myString) public {
+        myString = _myString;
+    }
+}
+
+
+Interaction
+If you deploy the Smart Contract to the JavaScript VM, you'll see that a new button appeared in a different color:
+ 
+When you enter
+1. "Hello Earth" in the input field and
+2. send off the transaction, then
+3. a new Transaction will appear in the log windows and
+4. The string "myString" is updated to "Hello Earth"

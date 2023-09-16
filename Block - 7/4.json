@@ -1,0 +1,16 @@
+{
+    "name": "The Butterfly",
+    "description": "Buy them now. Also, they are coming from https://github.com/uchihashahin01",
+    "image": "https://bafybeialhjbtuur5rlndrslsuenpbf4ycyhomov4556kyuatqbq5ugwrtq.ipfs.nftstorage.link/",
+    "external_url": "https://github.com/uchihashahin01",
+    "attributes": [
+        {
+            "trait_type": "Artefact", 
+            "value": "Teddybear"
+        },
+        {
+            "trait_type": "Collection", 
+            "value": "Genesis"
+        }
+    ]
+}

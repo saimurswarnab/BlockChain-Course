@@ -1,0 +1,79 @@
+Simple Token Transfer: Create a contract that allows users to transfer a specific token from one address to another. The contract should validate the sender's balance and update the balances accordingly.
+
+Token Properties: The contract starts by setting up some basic information about the custom token. This includes its name (what it's called), symbol (a short code representing the token), and the number of decimal places allowed for dividing the token (useful for dealing with fractions of tokens).
+
+Total Token Supply: When the contract is created, it defines the total number of tokens that will ever exist (the "total supply"). This quantity is multiplied by a factor based on the decimals to make sure the token amount is correctly represented.
+
+Account Balances: The contract keeps track of the token balance for each user (address). It uses a mapping to associate each address with the number of tokens they own.
+
+Token Transfer: Users can transfer their tokens to other users by calling the transfer function. They specify the recipient's address (_to) and the number of tokens (_value) they want to send. The function first checks if the sender has enough tokens to make the transfer. If they do, the tokens are deducted from the sender's balance and added to the recipient's balance.
+
+Events: When a token transfer is successfully executed, the contract emits a "Transfer" event. This event provides information about the sender, recipient, and the number of tokens transferred. This event can be used by external applications to monitor token movements.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Escrow Service: Develop a contract that acts as an escrow service. It holds funds sent by one party until specific conditions are met. For example, two parties agree on a trade, and the contract holds the funds until both parties confirm the successful completion of the trade.
+
+The contract is deployed with the addresses of the buyer, seller, and an optional arbiter.
+
+The buyer initiates the trade by depositing funds into the contract. The funds are held in the contract until the trade is confirmed.
+
+Once the buyer and seller agree on the trade's terms, they can individually confirm the trade. The contract keeps track of each party's confirmation status.
+
+The funds will be released only if both the buyer and seller have confirmed the trade. This ensures that both parties are in agreement before proceeding.
+
+The contract allows an arbiter to be involved in case of disputes. However, the arbiter's confirmation is not mandatory for the funds to be released.
+
+Once both parties have confirmed the trade, the funds are transferred to the seller, and the trade is considered complete.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Access Control: Implement access control in a contract to restrict specific functions or data to only authorized users. Use msg.sender to validate the caller's identity and allow or deny access based on predefined conditions.
+
+Contract Owner: The contract is initialized with an owner, who is the address of the person deploying the contract. The owner has special privileges and can perform functions that are restricted to them.
+
+Authorized Users: The contract allows the contract owner to add and remove authorized users. An authorized user is someone who is granted access to certain functions within the contract.
+
+Adding Authorized User: The contract owner can add a new authorized user by calling the addAuthorizedUser function. They need to provide the address of the new user, and the user will be granted access to specific functions.
+
+Removing Authorized User: Similarly, the contract owner can remove an authorized user by calling the removeAuthorizedUser function. They need to provide the address of the user to be removed, and the user will lose access to the restricted functions.
+
+Authorized Function: The contract includes a function called onlyAuthorizedFunction. This function can be called only by authorized users. When an authorized user calls this function, it executes specific logic (in this example, it emits an event).
+
+Owner Function: The contract also has a function called onlyOwnerFunction. This function can be called only by the contract owner. Similar to the authorized function, when the owner calls this function, it executes specific logic (emits an event).
+
+Events: The contract includes example events (AuthorizedFunctionCalled and OwnerFunctionCalled) to demonstrate how events can be emitted within the contract. Events can be used to provide information about specific actions taken within the contract.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Crowdfunding Campaign: Create a contract for a crowdfunding campaign where contributors can send Ethereum to support a project. The contract should keep track of contributors' balances, allow them to withdraw their funds if the campaign is unsuccessful, and transfer funds to the project creator if the campaign reaches its goal.
+
+Campaign Setup: When the contract is deployed, the creator (deployer) sets the funding goal (_goal) and the duration of the campaign in minutes (_durationInMinutes). The campaign's goal is specified in Ether, and the deadline is calculated by adding the duration to the current timestamp.
+
+Contribution: Anyone can contribute funds to the campaign by calling the contribute function and sending Ether along with the transaction. Contributions can be made as long as the campaign is ongoing and hasn't reached its deadline.
+
+Campaign Status: The contract allows anyone to check the campaign status by calling the checkCampaignStatus function. If the current timestamp has passed the campaign deadline, the campaign is considered ended. Depending on whether the campaign goal is reached (i.e., the contract's balance is equal to or greater than the goal), the campaign is marked as successful or unsuccessful.
+
+Withdraw Funds: After the campaign ends, contributors who participated in an unsuccessful campaign can withdraw their contributions by calling the withdrawFunds function. If a contributor has contributed multiple times, they can withdraw each contribution separately.
+
+Transfer Funds to Creator: If the campaign is successful, the creator can call the transferFundsToCreator function to withdraw the entire balance of the contract. Only the creator can initiate this function call.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Lottery Contract: Design a contract that holds a lottery game. Users can purchase tickets by sending a certain amount of Ethereum to the contract. At a specific time or when a threshold is reached, the contract should randomly select a winner and transfer the prize funds to the winner's address.
+		
+Contract Initialization: When the contract is deployed, the manager and the owner are set to the contract deployer. The ticket price and the maximum number of tickets that can be sold are specified, along with the duration of the lottery in minutes.
+
+Ticket Purchase: Participants can buy tickets by calling the buyTickets function and sending the required Ether (Wei) along with the transaction. The number of tickets purchased (numOfTickets) is specified as an input. The total number of tickets and the ticket holders' mapping are updated accordingly.
+
+Ending the Lottery: The owner (and manager) can end the lottery by calling the endLottery function. This function can only be called after the lottery's specified duration has passed. The winner is chosen randomly, and 80% of the contract's balance is transferred to the winner. The remaining 20% is transferred to the contract owner.
+
+Random Number Generation: The contract uses a simple method (generateRandomNumber) to generate a pseudo-random number based on the block's difficulty, current timestamp, and the list of participants. This random number is used to select the winner.
+
+Contract Balance: The contract includes a function (getContractBalance) to check the current balance (in Wei) held by the contract.
+
+Participants List: The contract provides a function (getParticipants) to retrieve the list of addresses of all participants who bought tickets in the lottery.
+
+
+

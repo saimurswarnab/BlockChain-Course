@@ -1,0 +1,16 @@
+{
+    "name": "The Butterfly ImageUpload Website",
+    "description": "Buy them now. Also, they are coming from https://github.com/uchihashahin01",
+    "image": "https://imageupload.io/ib/Smig0IYOK3H0Ptg_1694770149.png",
+    "external_url": "https://github.com/uchihashahin01",
+    "attributes": [
+        {
+            "trait_type": "Artefact", 
+            "value": "Butterfly"
+        },
+        {
+            "trait_type": "Collection", 
+            "value": "Genesis"
+        }
+    ]
+}
